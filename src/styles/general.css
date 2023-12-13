@@ -1,0 +1,59 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+@layer main, simulation;
+
+@layer main {
+  main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #555353;
+  }
+}
+
+@layer simulation {
+  .simulation {
+    border: 1px solid #e1e1e1;
+    background-color: lightgray;
+    position: relative;
+  }
+
+  .simulation::after {
+    color: #e1e1e1;
+    position: absolute;
+    z-index: 99;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: -30px;
+    content: attr(data-frames);
+    text-align: left;
+
+    > * {
+      position: absolute;
+    }
+  }
+
+  @layer world, asset-back, asset-front;
+
+  @layer world {
+  }
+
+  @layer asset-back {
+  }
+
+  @layer asset-front {
+    .rectangle {
+        background-color: blue;
+    }
+  }
+}

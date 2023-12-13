@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Physics simulator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Link to your external CSS file in the "styles" folder -->
+    <link rel="stylesheet" type="text/css" href="styles/general.css" />
+  </head>
+  <body>
+    <main id="main"></main>
+    <script type="module">
+      import { Simulator } from './js/Simulator.mjs';
+      const simulation = new Simulator(800, 600);
+      simulation.start();
+      simulation.createElement();
+    </script>
+  </body>
+</html>
